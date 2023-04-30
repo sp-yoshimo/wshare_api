@@ -41,7 +41,7 @@ app.delete("/api/delete/:id", async (req, res) => {
     //idを取得
     const id = req.params.id;
     await MapModel.findByIdAndDelete(id)
-        .then((res) => consoke.log(res))
+        .then((res) => console.log(res))
         .catch((err) => console.log(err));
 })
 //データの編集
