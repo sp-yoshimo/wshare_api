@@ -14,7 +14,6 @@ app.get("/api", async (req, res) => {
     //データベースの中のデータを全て返す
     const maps = await MapModel.find({});
     try {
-        res.header("Access-Control-Allow-Origin", "http://localhost:3000");
         res.send(maps);
     } catch (err) {
         if (!res.headersSent) {
@@ -27,7 +26,6 @@ app.post("/api/post", async (req, res) => {
     //データベースの中のデータを全て返す
     const map = await MapModel(req.body);
     try {
-        res.header("Access-Control-Allow-Origin", "http://localhost:3000/");
         await map.save();
     } catch (err) {
         console.log(err);
